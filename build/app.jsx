@@ -2,24 +2,20 @@
 
 import React from "react"
 import ReactDOM from "react-dom"
-import { FlexContainer, FlexColumn, FlexRow, FlexContent } from "react-layout"
+import { Block, FormRow } from "react-layout"
 
-ReactDOM.render(
-  <FlexContainer>
-    <FlexColumn>
-      <FlexContent style={{ background: "orange" }} flexItem={ false }>4</FlexContent>
-      <FlexRow style={{ border: "1px solid blue" }}>
-        <FlexContent style={{ background: "red" }} flexItem={ false }>1</FlexContent>
-        <FlexContent style={{ background: "purple", display: "flex" }}>
-          <FlexRow style={{ background: "green" }}>
-            <FlexColumn flexItem={false} style={{ background: "yellow" }}>
-              <FlexContent flexItem={false}>hello</FlexContent>
-            </FlexColumn>
-            <FlexContent flexItem={ false }>world</FlexContent>
-          </FlexRow>
-        </FlexContent>
-      </FlexRow>
-    </FlexColumn>
-    Block
-  </FlexContainer>
+ReactDOM.render(<Block style={{ background: "lightgray" }} direction="column">
+    <FormRow style={{ background: "orange" }}>
+      <div style={{ background: "purple", flex: "1 0 auto" }}>First</div>
+      <div style={{ background: "violet", flex: "1 0 auto" }}>First</div>
+      <div style={{ background: "purple", flex: "1 0 auto" }}>First</div>
+    </FormRow>
+    <Block style={{ background: "pink"}} >
+      <div style={{ background: "lightblue" }}>Hello world</div>
+      <div style={{ background: "red"}}>2</div>
+    </Block>
+    <Block style={{ background: "salmon"}}>
+      <Block style={{ background: "goldenrod" }} centered={ true }>goldenrod</Block>
+    </Block>
+  </Block>
   ,document.getElementById("content"))
